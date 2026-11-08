@@ -25,6 +25,12 @@ are granting** before running it. If that is not clear to you, do not use it.
 Start it only on isolated test LANs / VMs / closed lab environments, and **stop
 it when you are done** — it is a temporary foothold, not a service to leave up.
 
+## Authorized use only
+Use this **only** on machines you own or are **explicitly authorized** to
+access. Using it against systems you do not have permission to access may be
+illegal (for example under unauthorized-computer-access laws). You alone are
+responsible for how you use it.
+
 ## Layout
 ```
 src/
@@ -140,6 +146,12 @@ Verify the Windows binary's DLL dependencies with:
 x86_64-w64-mingw32-objdump -p w7telnet-listen-x64.exe | grep "DLL Name"
 ```
 
+## License
+MIT — see [LICENSE.md](LICENSE.md). The software is provided **"as is"**,
+without warranty of any kind, and **the author accepts no liability** for any
+damages or for any use made of it. See the license text for the full
+disclaimer.
+
 ---
 
 # w7telnet — 一時的な、認証なしの telnet listener（日本語）
@@ -164,6 +176,11 @@ x86_64-w64-mingw32-objdump -p w7telnet-listen-x64.exe | grep "DLL Name"
 ことになるか**を充分に理解したうえで使用してください。意味が理解できない場合は
 使用しないでください。隔離された検証用 LAN / VM / 閉じたラボ環境でのみ起動し、
 **作業が済んだら止めてください**——常駐させるサービスではなく、一時的な足がかりです。
+
+## 許可された相手にのみ使ってください
+**自分が所有している**か、**明示的にアクセスを許可された**マシンに対してのみ
+使用してください。許可なく他者のシステムに対して使うことは、法律（不正アクセス
+禁止法など）に触れる可能性があります。どう使うかの責任は、利用者自身にあります。
 
 ## 構成
 ```
@@ -279,3 +296,9 @@ telnet <対象IP> 23
 ```bash
 x86_64-w64-mingw32-objdump -p w7telnet-listen-x64.exe | grep "DLL Name"
 ```
+
+## ライセンス
+MIT です（[LICENSE.md](LICENSE.md)）。本ソフトウェアは**現状のまま**提供され、
+いかなる保証もありません。**作者は、本ソフトウェアおよびその利用から生じる
+いかなる損害についても責任を負いません。** 完全な免責条項はライセンス本文を
+参照してください。
