@@ -52,6 +52,16 @@ make win-x86    # -> w7telnet-listen-x86.exe
 make win        # both
 ```
 
+### Notes for macOS builds
+Built and smoke-tested on Apple Silicon (arm64) macOS. Intel Macs are not tested yet.
+- `make` needs the Xcode Command Line Tools (`xcode-select --install`).
+- `make win-x64` / `make win-x86` need mingw-w64 (`brew install mingw-w64`).
+- For a quick localhost test, start `./w7telnet-listen 2323 127.0.0.1` in one terminal. Wait briefly before sending input, or the connection closes before the shell answers:
+  ```bash
+  { sleep 1; printf 'echo hi\r\n'; sleep 1; printf 'exit\r\n'; sleep 1; } | nc 127.0.0.1 2323
+  ```
+- These macOS cross-compiled exe files were not run from this Mac; the Windows build has been verified separately on a real Windows 7 Ultimate host (both the gcc/mingw and MSVC builds).
+
 ### Windows, building on Windows without make
 Two options, each producing a self-contained exe that runs on a stock
 Windows 7. Both 32- and 64-bit outputs have been verified to depend only on
@@ -181,6 +191,16 @@ make win-x64    # -> w7telnet-listen-x64.exe
 make win-x86    # -> w7telnet-listen-x86.exe
 make win        # 両方
 ```
+
+### macOS でのビルド メモ
+Apple Silicon (arm64) の macOS で、ビルドと localhost での簡単な動作確認まで行いました。Intel Mac では未確認です。
+- `make` には Xcode のコマンドラインツールが必要です (`xcode-select --install`)。
+- `make win-x64` / `make win-x86` には mingw-w64 が必要です (`brew install mingw-w64`)。
+- 動作確認は、別のターミナルで `./w7telnet-listen 2323 127.0.0.1` を起動してから行います。入力を流し込むと接続が先に閉じてしまうため、少し待ちを入れてください。
+  ```bash
+  { sleep 1; printf 'echo hi\r\n'; sleep 1; printf 'exit\r\n'; sleep 1; } | nc 127.0.0.1 2323
+  ```
+- これらの macOS でクロスコンパイルした exe は、その Mac 上からは実行していません。Windows ビルド自体は、別途 実機の Windows 7 Ultimate で動作確認済みです（gcc/mingw・MSVC の両方）。
 
 ### Windows 上で、make なしでビルド
 2 通りあり、どちらも素の Windows 7 で動く自己完結の exe を生成します。32bit /
