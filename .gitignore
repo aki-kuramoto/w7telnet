@@ -1,0 +1,9 @@
+# local
+.local
+
+# Build artifacts
+/w7telnet-listen
+/w7telnet-listen-x64.exe
+/w7telnet-listen-x86.exe
+*.o
+*.obj
